@@ -705,7 +705,6 @@ function Container(element: HTMLElement): (options?: ContainerOptions) => IConta
     };
 
     function dispose(container: IContainer) {
-      container.layout.disposeEventListener();
       scrollListener.dispose();
       unwrapChildren(container.element);
     }
@@ -783,6 +782,7 @@ const smoothDnD: SmoothDnDCreator = function (element: HTMLElement, options?: Co
   Mediator.register(container);
   return {
     dispose() {
+      container.layout.disposeEventListener();
       Mediator.unregister(container);
       container.dispose(container);
     },

@@ -241,7 +241,7 @@ export default function layoutManager(containerElement: ElementX, orientation: O
 	}
 
 	return {
-    disposeEventListener,
+    	disposeEventListener,
 		getSize,
 		getContainerRectangles,
 		getBeginEndOfDOMRect,
