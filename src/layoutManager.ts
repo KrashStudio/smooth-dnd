@@ -69,13 +69,13 @@ export default function layoutManager(containerElement: ElementX, orientation: O
 		invalidate();
 	}, 10);
 
-  function invalidateContainerRectanglesListener(element: ElementX) {
-    invalidateContainerRectangles(element);
-  }
+	function invalidateContainerRectanglesListener(element: ElementX) {
+		invalidateContainerRectangles(element);
+	}
 
-  function disposeEventListener() {
-    window.removeEventListener('resize', () => invalidateContainerRectanglesListener(containerElement));
-  }
+	function disposeEventListener() {
+		window.removeEventListener('resize', () => invalidateContainerRectanglesListener(containerElement));
+	}
 
 	function invalidate() {
 		invalidateContainerRectangles(containerElement);
