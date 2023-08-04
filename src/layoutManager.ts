@@ -63,18 +63,18 @@ export default function layoutManager(containerElement: ElementX, orientation: O
 		translation: 0
 	};
 
-	window.addEventListener('resize', () => invalidateContainerRectanglesListener(containerElement));
+	window.addEventListener('resize', invalidateContainerRectanglesListener, true);
 
 	setTimeout(() => {
 		invalidate();
 	}, 10);
 
-	function invalidateContainerRectanglesListener(element: ElementX) {
-		invalidateContainerRectangles(element);
+	function invalidateContainerRectanglesListener() {
+		invalidateContainerRectangles(containerElement);
 	}
 
 	function disposeEventListener() {
-		window.removeEventListener('resize', () => invalidateContainerRectanglesListener(containerElement));
+		window.removeEventListener('resize', invalidateContainerRectanglesListener, true);
 	}
 
 	function invalidate() {

@@ -705,7 +705,6 @@ function Container(element: HTMLElement): (options?: ContainerOptions) => IConta
     };
 
     function dispose(container: IContainer) {
-      container.layout.disposeEventListener();
       scrollListener.dispose();
       unwrapChildren(container.element);
     }
